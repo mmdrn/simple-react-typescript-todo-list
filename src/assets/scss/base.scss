@@ -1,0 +1,170 @@
+@import "./fontfaces/lato.scss";
+@import "./fontfaces/dana.scss";
+
+html {
+  font: 16px/25px "Lato", "Dana";
+  a {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  * {
+    background: none;
+    list-style: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    color: inherit;
+    flex-wrap: wrap;
+    font-family: "Lato", "Dana";
+  }
+
+  .container {
+    width: 1150px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 auto;
+  }
+
+  .App {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: calc((100% - 1150px) / 2);
+      height: 100%;
+      background-color: #f1f2f7;
+    }
+
+    &:dir(ltr) {
+      &::before {
+        right: 0;
+      }
+    }
+
+    &:dir(rtl) {
+      &::before {
+        left: 0;
+      }
+    }
+
+    .container {
+      align-items: stretch;
+      min-height: 100vh;
+      .main-artboard {
+        background-color: #f1f2f7;
+        width: 50%;
+      }
+      .wrapper {
+        width: 50%;
+        padding-top: 50px;
+      }
+    }
+  }
+}
+
+// breakpoints
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  html {
+    .container {
+      width: 300px;
+    }
+    .App {
+      &::before {
+        display: none;
+      }
+      .container {
+        .main-artboard {
+          display: none;
+        }
+        .wrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 599px) {
+  html {
+    .container {
+      width: 460px;
+    }
+    .App {
+      &::before {
+        display: none;
+      }
+      .container {
+        .wrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  html {
+    .container {
+      width: 580px;
+    }
+    .App {
+      &::before {
+        display: none;
+      }
+      .container {
+        .wrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 899px) {
+  html {
+    .container {
+      width: 740px;
+    }
+    .App {
+      &::before {
+        display: none;
+      }
+      .container {
+        .wrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1023px) {
+  html {
+    .container {
+      width: 880px;
+    }
+    .App {
+      &::before {
+        width: calc((100% - 880px) / 2);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  html {
+    .container {
+      width: 1000px;
+    }
+    .App {
+      &::before {
+        width: calc((100% - 1000px) / 2);
+      }
+    }
+  }
+}
