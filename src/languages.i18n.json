@@ -71,6 +71,25 @@
                         "error": "The Password can't be less than {{value}} characters."
                     }
                 }
+            },
+            "addTodoForm": {
+                "title": {
+                    "title": "Title",
+                    "errorMinLength": "The Title can't be less than {{value}} characters.",
+                    "errorMaxLength": "The Title can't be more than {{value}} characters."
+                }
+            },
+            "addNoteForm": {
+                "title": {
+                    "title": "Title",
+                    "errorMinLength": "The Title can't be less than {{value}} characters.",
+                    "errorMaxLength": "The Title can't be more than {{value}} characters."
+                },
+                "description": {
+                    "title": "Description",
+                    "errorMinLength": "The Description can't be less than {{value}} characters.",
+                    "errorMaxLength": "The Description can't be more than {{value}} characters."
+                }
             }
         }
     },

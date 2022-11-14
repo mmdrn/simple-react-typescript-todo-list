@@ -1,4 +1,5 @@
 import React, { FC, useState } from "react";
+import "./style.scss";
 
 interface FormControlProps {
   title?: String;
