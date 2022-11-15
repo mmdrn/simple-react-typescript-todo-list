@@ -27,10 +27,18 @@ const Header: FC<HeaderProps> = (props) => {
         <img src={logo} alt="diss-co logo" />
       </figure>
 
-      <div className="menu">
-        <Link className="item" to="/notes">Notes</Link>
-        <Link className="item" to="/todos">Todos</Link>
-      </div>
+      {props.layout === "dashboard" ? (
+        <div className="menu">
+          <Link className="item" to="/notes">
+            Notes
+          </Link>
+          <Link className="item" to="/todos">
+            Todos
+          </Link>
+        </div>
+      ) : (
+        ""
+      )}
 
       <div className="languages">
         {languages.map((language: any) => (
