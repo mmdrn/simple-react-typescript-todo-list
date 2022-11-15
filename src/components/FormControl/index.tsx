@@ -72,7 +72,7 @@ const FormControl: FC<FormControlProps> = (props: any) => {
     <div
       className={`form-control ${data.errors.length > 0 ? "has-error" : ""}
         ${data.inputType === "file" ? "file" : ""}
-      }`}
+      `}
       key={data.key}
     >
       {validationComponent(data.key)}

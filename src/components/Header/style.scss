@@ -35,7 +35,6 @@
     }
 
     .item {
-      margin-bottom: 3px;
       cursor: pointer;
       transition: color ease 0.3s;
       font-weight: 300;
@@ -47,13 +46,45 @@
       &:dir(rtl) {
         text-align: left;
       }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
       &.active {
         font-weight: 500;
         color: #7f56da;
+      }
+    }
+  }
+
+  &.auth {
+    .languages {
+      .item {
+        margin-bottom: 3px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &.dashboard {
+    padding: 20px calc((100% - 1150px) / 2) 20px;
+    margin: 0 auto 20px;
+    background-color: #f1f2f7;
+    .languages {
+      display: flex;
+      flex-direction: row;
+      width: 400px;
+      .item {
+        &:dir(ltr) {
+          margin-left: 40px;
+          &:first-child {
+            margin-left: 0;
+          }
+        }
+        &:dir(rtl) {
+          margin-right: 40px;
+          &:first-child {
+            margin-right: 0;
+          }
+        }
       }
     }
   }

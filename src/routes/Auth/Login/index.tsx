@@ -2,7 +2,6 @@ import { FC, useEffect, useState } from "react";
 import "./style.scss";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { Login as LoginRequest } from "./../../../api/auth.api";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import FormControl from "../../../components/FormControl";
@@ -97,7 +96,7 @@ const Signin: FC = () => {
     };
 
     try {
-      const response: any = await LoginRequest(data);
+      const response: any = /* await LoginRequest(data); */ data
 
       if (response.status) {
         toast.success(response.message.description, {
