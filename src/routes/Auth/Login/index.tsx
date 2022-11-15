@@ -3,12 +3,13 @@ import "./style.scss";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FormControl from "../../../components/FormControl";
 import { UserService } from "../../../services/user.service";
 
 const Signin: FC = () => {
   document.title = "Ide Sazan | Login";
+  const navigate = useNavigate();
 
   const { t } = useTranslation();
   const [form, updateForm] = useState<any>({
@@ -92,6 +93,7 @@ const Signin: FC = () => {
 
       if (response.status) {
         localStorage.setItem("token", response.token);
+        navigate("/home");
         toast.success(response.message, {
           autoClose: 10000,
         });
