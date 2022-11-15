@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import FormControl from "../../../components/FormControl";
+import { UserService } from "../../../services/user.service";
 
 const Signin: FC = () => {
   document.title = "Ide Sazan | Login";
@@ -57,19 +58,11 @@ const Signin: FC = () => {
     }
 
     // username validation
-    const phoneNumberRegex = new RegExp(
-      "^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$"
-    );
-    if (
-      !String(_form.username.value)
-        .toLowerCase()
-        .match(
-          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        ) &&
-      _form.username.value.search(phoneNumberRegex) < 0
-    ) {
+    if (_form.username.value.length < _form.username.minLength) {
       isValid = false;
-      const errorMessage = t("login.form.username.error");
+      const errorMessage = t("login.form.username.error", {
+        value: _form.username.minLength,
+      });
       _form.username.errors.push(errorMessage);
     }
 
@@ -90,21 +83,21 @@ const Signin: FC = () => {
   const submit = async () => {
     if (!formValidation()) return false;
 
-    const data = {
-      username: form.username.value,
-      password: form.password.value,
-    };
-
     try {
-      const response: any = /* await LoginRequest(data); */ data
+      const userService = new UserService();
+      const response = await userService.Signin({
+        name: form.username.value,
+        password: form.password.value,
+      });
 
       if (response.status) {
-        toast.success(response.message.description, {
+        localStorage.setItem("token", response.token);
+        toast.success(response.message, {
           autoClose: 10000,
         });
         return true;
       } else {
-        toast.error(response.message.description, {
+        toast.error(response.message, {
           autoClose: 10000,
         });
         return false;
