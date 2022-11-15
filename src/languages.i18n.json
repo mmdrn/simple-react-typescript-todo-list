@@ -92,6 +92,19 @@
                     "errorMaxLength": "The Description can't be more than {{value}} characters."
                 },
                 "submitButton": "Add"
+            },
+            "updateNoteForm": {
+                "title": {
+                    "title": "Title",
+                    "errorMinLength": "The Title can't be less than {{value}} characters.",
+                    "errorMaxLength": "The Title can't be more than {{value}} characters."
+                },
+                "description": {
+                    "title": "Description",
+                    "errorMinLength": "The Description can't be less than {{value}} characters.",
+                    "errorMaxLength": "The Description can't be more than {{value}} characters."
+                },
+                "submitButton": "Update"
             }
         }
     },

@@ -12,6 +12,7 @@ import Signup from "./routes/Auth/Signup";
 import DashboardLayout from "./layouts/Dashboard";
 import Todos from "./routes/Todos";
 import Notes from "./routes/Notes";
+import Note from "./routes/Note";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,7 @@ function App() {
           <Route element={<DashboardLayout />}>
             <Route path="/todos" element={<Todos />} />
             <Route path="/notes" element={<Notes />} />
+            <Route path="/notes/:id" element={<Note />} />
           </Route>
         </Routes>
       </BrowserRouter>

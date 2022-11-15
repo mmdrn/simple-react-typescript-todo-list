@@ -24,39 +24,36 @@ const TodosList: FC = () => {
   };
 
   return (
-    <>
-      <h2 className="todos-list-title">TODOs</h2>
-      <div className="todos-list">
-        {Object.values(todos)
-          .reverse()
-          .map((todo: Todo) => (
-            <div
-              key={todo.id}
-              className={`todo ${todo.is_checked ? "checked" : ""}`}
+    <div className="todos-list">
+      {Object.values(todos)
+        .reverse()
+        .map((todo: Todo) => (
+          <div
+            key={todo.id}
+            className={`todo ${todo.is_checked ? "checked" : ""}`}
+          >
+            <span
+              className="checkbox"
+              onClick={(e) => handleCheckTodo(todo, !todo.is_checked)}
             >
-              <span
-                className="checkbox"
-                onClick={(e) => handleCheckTodo(todo, !todo.is_checked)}
-              >
-                {todo.is_checked ? <img src={checkedIcon} alt="checked" /> : ""}
-              </span>
-              <h2 className="title">{todo.title}</h2>
-              <p className="date">
-                {todo.updated_date
-                  ? new Date(todo.updated_date).toDateString()
-                  : new Date(todo.created_date).toDateString()}
-              </p>
-              <button
-                type="button"
-                className="delete"
-                onClick={(e) => handleRemoveTodo(todo)}
-              >
-                <img src={deleteIcon} alt="delete" />
-              </button>
-            </div>
-          ))}
-      </div>
-    </>
+              {todo.is_checked ? <img src={checkedIcon} alt="checked" /> : ""}
+            </span>
+            <h2 className="title">{todo.title}</h2>
+            <p className="date">
+              {todo.updated_date
+                ? new Date(todo.updated_date).toDateString()
+                : new Date(todo.created_date).toDateString()}
+            </p>
+            <button
+              type="button"
+              className="delete"
+              onClick={(e) => handleRemoveTodo(todo)}
+            >
+              <img src={deleteIcon} alt="delete" />
+            </button>
+          </div>
+        ))}
+    </div>
   );
 };
 

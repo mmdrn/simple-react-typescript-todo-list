@@ -71,6 +71,7 @@
     .languages {
       display: flex;
       flex-direction: row;
+      justify-content: flex-end;
       width: 400px;
       .item {
         &:dir(ltr) {
