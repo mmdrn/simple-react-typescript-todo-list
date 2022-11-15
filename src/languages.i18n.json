@@ -311,7 +311,7 @@
                     "errorMaxLength": "Başlık {{value}} karakterden fazla olamaz."
                 },
                 "description": {
-                    "title": "Description",
+                    "title": "Tanım",
                     "errorMinLength": "Açıklama {{value}} karakterden az olamaz.",
                     "errorMaxLength": "Açıklama, {{value}} karakterden fazla olamaz."
                 },
@@ -324,7 +324,7 @@
                     "errorMaxLength": "Başlık {{value}} karakterden fazla olamaz."
                 },
                 "description": {
-                    "title": "Description",
+                    "title": "Tanım",
                     "errorMinLength": "Açıklama {{value}} karakterden az olamaz.",
                     "errorMaxLength": "Açıklama, {{value}} karakterden fazla olamaz."
                 },

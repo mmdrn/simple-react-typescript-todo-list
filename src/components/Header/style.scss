@@ -26,15 +26,32 @@
     align-items: center;
     justify-content: flex-start;
     font-size: 16px;
-    margin-right: auto;
-    margin-left: 80px;
+
+    &:dir(ltr) {
+      margin-right: auto;
+      margin-left: 80px;
+    }
+    &:dir(rtl) {
+      margin-right: 80px;
+      margin-left: auto;
+    }
+
     .item {
       padding: 5px 10px;
       background-color: #dadada;
-      margin-right: 20px;
       border-radius: 5px;
-      &:last-child {
-        margin-left: 0;
+
+      &:dir(ltr) {
+        margin-right: 20px;
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+      &:dir(rtl) {
+        margin-left: 20px;
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
