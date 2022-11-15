@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import FormControl from "../../../components/FormControl";
 import { addNote } from "../../../store/notes";
+import "./style.scss";
 
 const AddNoteForm: FC = () => {
   const dispatch = useDispatch();
@@ -102,7 +103,8 @@ const AddNoteForm: FC = () => {
   };
 
   return (
-    <div>
+    <div className="add-note-form">
+      <h2 className="form-title">Add new notes 📝</h2>
       <div className="form">
         {Object.keys(addNoteForm).map((key) => {
           return (
@@ -115,7 +117,7 @@ const AddNoteForm: FC = () => {
           );
         })}
         <button type="submit" className="button" onClick={submit}>
-          {t("login.loginButton")}
+          {t("addNoteForm.submitButton")}
         </button>
       </div>
     </div>

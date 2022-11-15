@@ -28,6 +28,24 @@ html {
     justify-content: flex-start;
     margin: 0 auto;
   }
+
+  .button {
+    background-color: #7f56da;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    height: 54px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color ease 0.3s, opacity ease 0.3s;
+    &:hover {
+      background-color: darken(#7f56da, 10);
+    }
+  }
 }
 
 // breakpoints

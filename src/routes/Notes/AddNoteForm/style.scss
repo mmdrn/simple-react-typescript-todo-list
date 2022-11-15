@@ -1,0 +1,18 @@
+.add-note-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  .form-title {
+    width: 100%;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .form {
+    width: 100%;
+    .button {
+      width: 150px;
+    }
+  }
+}

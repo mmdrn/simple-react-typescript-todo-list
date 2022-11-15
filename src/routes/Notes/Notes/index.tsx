@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useSelector } from "react-redux";
 import { Note } from "../../../types/note";
 
-const Notes: FC = () => {
+const NotesList: FC = () => {
   const notes: Note[] = useSelector((state: any) => state.notes);
 
   return (
@@ -23,4 +23,4 @@ const Notes: FC = () => {
   );
 };
 
-export default Notes;
+export default NotesList;

@@ -1,4 +1,4 @@
-import React, { FC/* , useState */ } from "react";
+import React, { FC /* , useState */ } from "react";
 import "./style.scss";
 
 interface FormControlProps {
@@ -11,12 +11,7 @@ interface FormControlProps {
 }
 
 const FormControl: FC<FormControlProps> = (props: any) => {
-  // const [data, setData] = useState(Object.assign({}, props.data));
-
   const handleChange = (value: any, key: string) => {
-    // const _data = Object.assign({}, data);
-    // _data.value = value;
-    // setData(_data);
     props.onHandleChange(value, key);
   };
 
@@ -74,7 +69,9 @@ const FormControl: FC<FormControlProps> = (props: any) => {
 
   return (
     <div
-      className={`form-control ${props.data.errors.length > 0 ? "has-error" : ""}
+      className={`form-control ${
+        props.data.errors.length > 0 ? "has-error" : ""
+      }
         ${props.data.inputType === "file" ? "file" : ""}
       `}
       key={props.data.key}

@@ -82,7 +82,7 @@ const AddTodoForm: FC = () => {
 
   return (
     <div className="add-todo-form">
-      <h2 className="form-title">Add new todos ✏️ 😎</h2>
+      <h2 className="form-title">Add new todos ✏️</h2>
       <div className="form">
         {Object.keys(addTodoForm).map((key) => {
           return (
@@ -90,7 +90,7 @@ const AddTodoForm: FC = () => {
               data={addTodoForm[key]}
               title={t(`addTodoForm.${key}.title`).toString()}
               onHandleChange={handleInputChange}
-              placeholder="Just type and press enter"
+              placeholder={t(`addTodoForm.${key}.placeholder`).toString()}
               onKeyDown={(e: React.KeyboardEvent) => submit(e)}
               key={key}
             />

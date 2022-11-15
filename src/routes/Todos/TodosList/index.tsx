@@ -6,7 +6,7 @@ import "./style.scss";
 import deleteIcon from "./../../../assets/images/delete.png";
 import checkedIcon from "./../../../assets/images/check.png";
 
-const Todos: FC = () => {
+const TodosList: FC = () => {
   const dispatch = useDispatch();
   const todos: Todo[] = useSelector((state: any) => state.todos);
 
@@ -60,4 +60,4 @@ const Todos: FC = () => {
   );
 };
 
-export default Todos;
+export default TodosList;

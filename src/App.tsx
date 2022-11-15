@@ -10,7 +10,8 @@ import Signin from "./routes/Auth/Login";
 import AuthLayout from "./layouts/Auth";
 import Signup from "./routes/Auth/Signup";
 import DashboardLayout from "./layouts/Dashboard";
-import Home from "./routes/Home";
+import Todos from "./routes/Todos";
+import Notes from "./routes/Notes";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,7 +38,8 @@ function App() {
             <Route path="/signup" element={<Signup />} />
           </Route>
           <Route element={<DashboardLayout />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/todos" element={<Todos />} />
+            <Route path="/notes" element={<Notes />} />
           </Route>
         </Routes>
       </BrowserRouter>

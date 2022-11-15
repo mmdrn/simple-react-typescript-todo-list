@@ -75,6 +75,7 @@
             "addTodoForm": {
                 "title": {
                     "title": "Title",
+                    "placeholder": "Just type and press enter",
                     "errorMinLength": "The Title can't be less than {{value}} characters.",
                     "errorMaxLength": "The Title can't be more than {{value}} characters."
                 }
@@ -89,7 +90,8 @@
                     "title": "Description",
                     "errorMinLength": "The Description can't be less than {{value}} characters.",
                     "errorMaxLength": "The Description can't be more than {{value}} characters."
-                }
+                },
+                "submitButton": "Add"
             }
         }
     },
@@ -164,6 +166,14 @@
                         "title": "کلمه عبور",
                         "error": "کلمه عبور نمی‌تواند کم‌تر از {{value}} حرف باشد."
                     }
+                }
+            },
+            "addTodoForm": {
+                "title": {
+                    "title": "عنوان",
+                    "placeholder": "تایپ کنید و اینتر بزنید",
+                    "errorMinLength": "عنوان نمی‌تواند کم‌تر از {{value}} حرف باشد.",
+                    "errorMaxLength": "عنوان نمی‌تواند بیشتر از {{value}} حرف باشد."
                 }
             }
         }
