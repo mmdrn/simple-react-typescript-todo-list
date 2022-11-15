@@ -4,7 +4,12 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: calc(((100% - 40px) / 2));
-  margin-left: 40px;
+  &:dir(ltr) {
+    margin-left: 40px;
+  }
+  &:dir(rtl) {
+    margin-right: 40px;
+  }
   .form-title {
     width: 100%;
     font-weight: 600;
