@@ -13,6 +13,8 @@ import DashboardLayout from "./layouts/Dashboard";
 import Todos from "./routes/Todos";
 import Notes from "./routes/Notes";
 import Note from "./routes/Note";
+import Home from "./routes/Home";
+import NotFound from "./routes/NotFound";
 
 function App() {
   const dispatch = useDispatch();
@@ -39,9 +41,11 @@ function App() {
             <Route path="/signup" element={<Signup />} />
           </Route>
           <Route element={<DashboardLayout />}>
+            <Route path="/" element={<Home />} />
             <Route path="/todos" element={<Todos />} />
             <Route path="/notes" element={<Notes />} />
             <Route path="/notes/:id" element={<Note />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

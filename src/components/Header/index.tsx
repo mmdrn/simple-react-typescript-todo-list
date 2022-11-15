@@ -23,9 +23,9 @@ const Header: FC<HeaderProps> = (props) => {
 
   return (
     <header className={`main-header ${props.layout}`}>
-      <figure className="logo">
+      <Link to={props.layout === "auth" ? "/login" : "/"} className="logo">
         <img src={logo} alt="diss-co logo" />
-      </figure>
+      </Link>
 
       {props.layout === "dashboard" ? (
         <div className="menu">
