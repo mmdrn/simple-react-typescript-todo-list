@@ -30,7 +30,6 @@ const Header: FC<HeaderProps> = (props) => {
         {languages.map((language: any) => (
           <span
             onClick={() => handleChangeLanguage(language)}
-            /* disabled={i18n.resolvedLanguage === language.key} */
             key={language.key}
             className={`item ${
               language.key === currentLanguage ? "active" : ""

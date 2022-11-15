@@ -19,6 +19,7 @@
     margin-bottom: 10px;
     margin-right: 30px;
     position: relative;
+    margin-bottom: 30px;
     &:nth-child(3n) {
       margin-right: 0;
     }
@@ -34,6 +35,10 @@
       padding: 10px 0;
       @include textOverflow(100%);
       margin-bottom: 20px;
+      transition: color ease 0.3s;
+      &:hover {
+        color: #7f56da;
+      }
     }
     .description {
       color: #888888;

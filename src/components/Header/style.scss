@@ -75,13 +75,13 @@
       width: 400px;
       .item {
         &:dir(ltr) {
-          margin-left: 40px;
+          margin-left: 25px;
           &:first-child {
             margin-left: 0;
           }
         }
         &:dir(rtl) {
-          margin-right: 40px;
+          margin-right: 25px;
           &:first-child {
             margin-right: 0;
           }

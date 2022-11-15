@@ -34,7 +34,7 @@ const Note: FC = () => {
 
         <p className="date">
           {note.updated_date
-            ? new Date(note.updated_date).toDateString()
+            ? new Date(note.updated_date).toDateString() + " updated"
             : new Date(note.created_date).toDateString()}
         </p>
         <button

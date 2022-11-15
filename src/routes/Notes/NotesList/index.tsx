@@ -17,13 +17,13 @@ const NotesList: FC = () => {
   return (
     <div className="notes-list">
       {Object.values(notes).map((note: Note) => (
-        <Link to={`/notes/${note.id}`} className="note" key={note.id}>
-          <h2 className="title">{note.title}</h2>
+        <div className="note" key={note.id}>
+          <Link to={`/notes/${note.id}`}  className="title">{note.title}</Link>
           <p className="description">{note.description}</p>
 
           <p className="date">
             {note.updated_date
-              ? new Date(note.updated_date).toDateString()
+              ? new Date(note.updated_date).toDateString() + " updated"
               : new Date(note.created_date).toDateString()}
           </p>
           <button
@@ -35,7 +35,7 @@ const NotesList: FC = () => {
           >
             <img src={deleteIcon} alt="delete" />
           </button>
-        </Link>
+        </div>
       ))}
     </div>
   );
