@@ -3,6 +3,9 @@
 
 html {
   font: 16px/25px "Lato", "Dana";
+  body {
+    overflow-y: scroll;
+  }
   a {
     display: block;
     text-decoration: none;

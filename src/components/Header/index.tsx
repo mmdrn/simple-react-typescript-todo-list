@@ -4,6 +4,7 @@ import { setLanguage } from "../../store/appSettings";
 import { useTranslation } from "react-i18next";
 import logo from "./../../assets/images/logo.svg";
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 interface HeaderProps {
   layout: "dashboard" | "auth";
@@ -25,6 +26,11 @@ const Header: FC<HeaderProps> = (props) => {
       <figure className="logo">
         <img src={logo} alt="diss-co logo" />
       </figure>
+
+      <div className="menu">
+        <Link className="item" to="/notes">Notes</Link>
+        <Link className="item" to="/todos">Todos</Link>
+      </div>
 
       <div className="languages">
         {languages.map((language: any) => (
