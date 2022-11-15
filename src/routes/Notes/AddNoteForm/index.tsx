@@ -102,13 +102,14 @@ const AddNoteForm: FC = () => {
 
     const _form: any = Object.assign({}, addNoteForm);
     _form.title.value = "";
+    _form.description.value = "";
 
     updateAddNoteForm(_form);
   };
 
   return (
     <div className="add-note-form">
-      <h2 className="form-title">Add new notes 📝</h2>
+      <h2 className="form-title">{t(`addNoteForm.formTitle`).toString()}</h2>
       <div className="form">
         {Object.keys(addNoteForm).map((key) => {
           return (

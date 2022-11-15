@@ -82,7 +82,7 @@ const AddTodoForm: FC = () => {
 
   return (
     <div className="add-todo-form">
-      <h2 className="form-title">Add new item ✏️</h2>
+      <h2 className="form-title">{t(`addTodoForm.formTitle`).toString()}</h2>
       <div className="form">
         {Object.keys(addTodoForm).map((key) => {
           return (

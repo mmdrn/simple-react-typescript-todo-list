@@ -1,6 +1,6 @@
-import { FC, /* useEffect, */ useState } from "react";
+import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { /* useSelector, */ useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import FormControl from "../../../components/FormControl";
 import { updateNote } from "../../../store/notes";
 import { Note } from "../../../types/note";
@@ -31,20 +31,6 @@ const UpdateNoteForm: FC<ComponentProps> = (props) => {
       errors: [],
     },
   });
-  //   const currentLanguage = useSelector(
-  //     (state: any) => state.appSettings.language
-  //   );
-
-  //   useEffect(() => {
-  //     const _form: any = Object.assign({}, updateNoteForm);
-  //     for (const item in _form) {
-  //       _form[item].errors = [];
-  //       _form[item].value = "";
-  //     }
-
-  //     updateUpdateNoteForm(_form);
-  //     // eslint-disable-next-line
-  //   }, [currentLanguage]);
 
   const handleInputChange = (value: any, key: string) => {
     const _form: any = Object.assign({}, updateNoteForm);

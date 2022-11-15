@@ -73,6 +73,7 @@
                 }
             },
             "addTodoForm": {
+                "formTitle": "Add new item ✏️",
                 "title": {
                     "title": "Title",
                     "placeholder": "Just type and press enter",
@@ -81,6 +82,7 @@
                 }
             },
             "addNoteForm": {
+                "formTitle": "Add new note 📝",
                 "title": {
                     "title": "Title",
                     "errorMinLength": "The Title can't be less than {{value}} characters.",
@@ -182,12 +184,40 @@
                 }
             },
             "addTodoForm": {
+                "formTitle": "اضافه کردن آیتم جدید ✏️",
                 "title": {
                     "title": "عنوان",
                     "placeholder": "تایپ کنید و اینتر بزنید",
                     "errorMinLength": "عنوان نمی‌تواند کم‌تر از {{value}} حرف باشد.",
                     "errorMaxLength": "عنوان نمی‌تواند بیشتر از {{value}} حرف باشد."
                 }
+            },
+            "addNoteForm": {
+                "formTitle": "اضافه کردن نوت جدید 📝",
+                "title": {
+                    "title": "عنوان",
+                    "errorMinLength": "عنوان نمی‌تواند کم‌تر از {{value}} حرف باشد.",
+                    "errorMaxLength": "عنوان نمی‌تواند بیشتر از {{value}} حرف باشد."
+                },
+                "description": {
+                    "title": "توضیحات",
+                    "errorMinLength": "توضیحات نمی‌تواند کم‌تر از {{value}} حرف باشد.",
+                    "errorMaxLength": "توضیحات نمی‌تواند بیشتر از {{value}} حرف باشد."
+                },
+                "submitButton": "ذخیره"
+            },
+            "updateNoteForm": {
+                "title": {
+                    "title": "عنوان",
+                    "errorMinLength": "عنوان نمی‌تواند کم‌تر از {{value}} حرف باشد.",
+                    "errorMaxLength": "عنوان نمی‌تواند بیشتر از {{value}} حرف باشد."
+                },
+                "description": {
+                    "title": "توضیحات",
+                    "errorMinLength": "توضیحات نمی‌تواند کم‌تر از {{value}} حرف باشد.",
+                    "errorMaxLength": "توضیحات نمی‌تواند بیشتر از {{value}} حرف باشد."
+                },
+                "submitButton": "بروزرسانی"
             }
         }
     },
@@ -263,6 +293,42 @@
                         "error": "Şifre {{value}} karakterden az olamaz."
                     }
                 }
+            },
+            "addTodoForm": {
+                "formTitle": "yeni öğe ekle ✏️",
+                "title": {
+                    "title": "Başlık",
+                    "placeholder": "Sadece yazıp enter tuşuna basın",
+                    "errorMinLength": "Başlık {{value}} karakterden az olamaz.",
+                    "errorMaxLength": "Başlık {{value}} karakterden fazla olamaz."
+                }
+            },
+            "addNoteForm": {
+                "formTitle": "Yeni not ekle 📝",
+                "title": {
+                    "title": "Başlık",
+                    "errorMinLength": "Başlık {{value}} karakterden az olamaz.",
+                    "errorMaxLength": "Başlık {{value}} karakterden fazla olamaz."
+                },
+                "description": {
+                    "title": "Description",
+                    "errorMinLength": "Açıklama {{value}} karakterden az olamaz.",
+                    "errorMaxLength": "Açıklama, {{value}} karakterden fazla olamaz."
+                },
+                "submitButton": "Ekle"
+            },
+            "updateNoteForm": {
+                "title": {
+                    "title": "Başlık",
+                    "errorMinLength": "Başlık {{value}} karakterden az olamaz.",
+                    "errorMaxLength": "Başlık {{value}} karakterden fazla olamaz."
+                },
+                "description": {
+                    "title": "Description",
+                    "errorMinLength": "Açıklama {{value}} karakterden az olamaz.",
+                    "errorMaxLength": "Açıklama, {{value}} karakterden fazla olamaz."
+                },
+                "submitButton": "Güncelleme"
             }
         }
     }
