@@ -35,9 +35,3 @@ export default configureStore({
       },
     }),
 });
-
-// export default configureStore({
-//   reducer: {
-//     appSettings,
-//   },
-// });

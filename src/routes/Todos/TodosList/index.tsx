@@ -10,7 +10,7 @@ const TodosList: FC = () => {
   const dispatch = useDispatch();
   const todos: Todo[] = useSelector((state: any) => state.todos);
 
-  const handleCheckTodo = (todo: Todo, status: Boolean) => {
+  const handleCheckTodo = (todo: Todo, status: boolean) => {
     dispatch(
       checkTodo({
         id: todo.id,

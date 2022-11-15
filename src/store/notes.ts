@@ -1,11 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
+import { AddNote } from "../types/addNote";
+import { UpdateNote } from "../types/updateNote";
 
 export const notes = createSlice({
   name: "notes",
   initialState: {},
   reducers: {
-    addNote: (state, action) => {
+    addNote: (state: any, action: PayloadAction<AddNote>) => {
       const note = {
         id: uuid(),
         title: action.payload.title,
@@ -16,10 +18,10 @@ export const notes = createSlice({
 
       state[note.id] = note;
     },
-    removeNote: (state, action) => {
+    removeNote: (state: any, action: PayloadAction<string>) => {
       delete state[action.payload];
     },
-    updateNote: (state, action) => {
+    updateNote: (state: any, action: PayloadAction<UpdateNote>) => {
       const note = state[action.payload.id];
       note.updated_date = Date.now();
       note.title = action.payload.title;

@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Language } from "../types/language";
 
 export const appSettings = createSlice({
   name: "appSettings",
@@ -27,7 +28,7 @@ export const appSettings = createSlice({
     ],
   },
   reducers: {
-    setLanguage: (state, action) => {
+    setLanguage: (state, action: PayloadAction<Language>) => {
       state.language = action.payload;
     },
   },

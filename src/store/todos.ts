@@ -1,11 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuid } from "uuid";
+import { CheckTodo } from "../types/checkTodo";
 
 export const todos = createSlice({
   name: "todos",
   initialState: {},
   reducers: {
-    addTodo: (state, action) => {
+    addTodo: (state: any, action: PayloadAction<string>) => {
       const todo = {
         id: uuid(),
         title: action.payload,
@@ -16,10 +17,10 @@ export const todos = createSlice({
 
       state[todo.id] = todo;
     },
-    removeTodo: (state, action) => {
+    removeTodo: (state: any, action: PayloadAction<string>) => {
       delete state[action.payload];
     },
-    checkTodo: (state, action) => {
+    checkTodo: (state: any, action: PayloadAction<CheckTodo>) => {
       state[action.payload.id].is_checked = action.payload.is_checked;
     },
   },
