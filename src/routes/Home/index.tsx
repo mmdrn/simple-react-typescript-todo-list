@@ -2,14 +2,15 @@ import { FC } from "react";
 import AddTodoForm from "./AddTodoForm";
 import Todos from "./Todos";
 import Notes from "./Notes";
-import AddNoteForm from "./AddNoteForm";
-import "./style.scss"
+// import AddNoteForm from "./AddNoteForm";
+import "./style.scss";
 
 const Home: FC = () => {
   document.title = "Ide Sazan | Home";
 
   return (
     <div className="home-page">
+      <AddTodoForm />
       <Todos />
       <br />
       <br />
@@ -28,7 +29,6 @@ const Home: FC = () => {
       <br />
       <br />
       <br />
-      <AddTodoForm />
       <br />
       <br />
       <br />
@@ -37,7 +37,7 @@ const Home: FC = () => {
       <br />
       <br />
       <br />
-      <AddNoteForm />
+      {/* <AddNoteForm /> */}
       <br />
       <br />
       <br />

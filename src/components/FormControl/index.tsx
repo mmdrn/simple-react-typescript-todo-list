@@ -1,20 +1,22 @@
-import React, { FC, useState } from "react";
+import React, { FC/* , useState */ } from "react";
 import "./style.scss";
 
 interface FormControlProps {
   title?: String;
   data?: Object;
   key?: String;
+  placeholder?: String;
   onHandleChange?: Function;
+  onKeyDown?: Function;
 }
 
 const FormControl: FC<FormControlProps> = (props: any) => {
-  const [data, setData] = useState(Object.assign({}, props.data));
+  // const [data, setData] = useState(Object.assign({}, props.data));
 
   const handleChange = (value: any, key: string) => {
-    const _data = Object.assign({}, data);
-    _data.value = value;
-    setData(_data);
+    // const _data = Object.assign({}, data);
+    // _data.value = value;
+    // setData(_data);
     props.onHandleChange(value, key);
   };
 
@@ -23,7 +25,7 @@ const FormControl: FC<FormControlProps> = (props: any) => {
       <div className="validations">
         {props.data.errors.map((error: any) => (
           <p
-            key={data.key}
+            key={props.data.key}
             className="validation-item"
             dangerouslySetInnerHTML={{ __html: error }}
           />
@@ -33,33 +35,35 @@ const FormControl: FC<FormControlProps> = (props: any) => {
   };
 
   const inputComponent = () => {
-    if (data.inputType !== "file") {
+    if (props.data.inputType !== "file") {
       return (
         <input
-          type={data.inputType}
-          id={data.key}
+          type={props.data.inputType}
+          id={props.data.key}
           className="control"
           autoComplete="off"
-          onChange={(e) => handleChange(e.target.value, data.key)}
-          value={data.value}
+          onChange={(e) => handleChange(e.target.value, props.data.key)}
+          value={props.data.value}
+          placeholder={props.placeholder}
+          onKeyDown={props.onKeyDown ? props.onKeyDown : undefined}
         />
       );
     } else {
       return (
         <label className="file-selector-wrapper">
-          <label className="selector" htmlFor={data.key}>
+          <label className="selector" htmlFor={props.data.key}>
             Select
           </label>
-          <span className="file-name">{data.value.name}</span>
+          <span className="file-name">{props.data.value.name}</span>
           <input
-            type={data.inputType}
-            id={data.key}
+            type={props.data.inputType}
+            id={props.data.key}
             className="control"
             autoComplete="off"
-            accept={data.accept}
+            accept={props.data.accept}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               if (e?.target?.files) {
-                handleChange(e.target.files[0], data.key);
+                handleChange(e.target.files[0], props.data.key);
               }
             }}
           />
@@ -70,14 +74,14 @@ const FormControl: FC<FormControlProps> = (props: any) => {
 
   return (
     <div
-      className={`form-control ${data.errors.length > 0 ? "has-error" : ""}
-        ${data.inputType === "file" ? "file" : ""}
+      className={`form-control ${props.data.errors.length > 0 ? "has-error" : ""}
+        ${props.data.inputType === "file" ? "file" : ""}
       `}
-      key={data.key}
+      key={props.data.key}
     >
-      {validationComponent(data.key)}
+      {validationComponent(props.data.key)}
       {inputComponent()}
-      <label htmlFor={data.key} className="control-title">
+      <label htmlFor={props.data.key} className="control-title">
         {props.title}
       </label>
     </div>

@@ -1,8 +1,9 @@
-import { FC, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from "react-redux";
 import FormControl from "../../../components/FormControl";
 import { addTodo } from "../../../store/todos";
+import "./style.scss";
 
 const AddTodoForm: FC = () => {
   const dispatch = useDispatch();
@@ -67,14 +68,21 @@ const AddTodoForm: FC = () => {
     return isValid;
   };
 
-  const submit = async () => {
-    if (!formValidation()) return false;
+  const submit = async (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") {
+      if (!formValidation()) return false;
+      dispatch(addTodo(addTodoForm.title.value));
 
-    dispatch(addTodo(addTodoForm.title.value));
+      const _form: any = Object.assign({}, addTodoForm);
+      _form.title.value = "";
+
+      updateAddTodoForm(_form);
+    }
   };
 
   return (
-    <div>
+    <div className="add-todo-form">
+      <h2 className="form-title">Add new todos ✏️ 😎</h2>
       <div className="form">
         {Object.keys(addTodoForm).map((key) => {
           return (
@@ -82,13 +90,12 @@ const AddTodoForm: FC = () => {
               data={addTodoForm[key]}
               title={t(`addTodoForm.${key}.title`).toString()}
               onHandleChange={handleInputChange}
+              placeholder="Just type and press enter"
+              onKeyDown={(e: React.KeyboardEvent) => submit(e)}
               key={key}
             />
           );
         })}
-        <button type="submit" className="button" onClick={submit}>
-          {t("login.loginButton")}
-        </button>
       </div>
     </div>
   );
